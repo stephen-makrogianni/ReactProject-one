@@ -11,11 +11,25 @@ export default class Header extends React.Component{
 	// 	var foo = 'World';
 	// 	return foo;
 	// }
+
+	handleChange(e){
+		var title = e.target.value;
+		this.props.changeTitle(title);
+	}
+
+
 	render(){
 		// const heading = 'Hello ';
 		// <h1>{heading + this.greeting() + ' from ' + this.name}</h1>
+
+
+		console.log(this.props);
 		return(
-			<Title />
+			<div>
+				<Title title={this.props.title} />
+				<input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+				
+			</div>
 		);
 	}
 } 
