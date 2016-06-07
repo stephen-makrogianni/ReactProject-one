@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import Header from './header/Header';
-import Footer from './Footer';
+import Header from '../header/Header';
+import Footer from '../Footer';
 
 export default class Layout extends React.Component{
 	constructor(){
@@ -32,6 +33,9 @@ export default class Layout extends React.Component{
 			{/*this.state.name*/}
 			{/*<Header title={title} />*/}
 			<Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
+			{this.props.children}
+			<Link to='archives'>Archives</Link>
+			<Link to='settings'>settings</Link>
 
 			<p>It's working</p>
 			<Footer/>
