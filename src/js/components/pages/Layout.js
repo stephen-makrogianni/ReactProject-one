@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
+import { Link } from "react-router";
 
-import Header from '../header/Header';
-import Footer from '../Footer';
+import Header from "../header/Header";
+import Footer from "../Footer";
 
 export default class Layout extends React.Component{
 	constructor(){
@@ -13,6 +13,11 @@ export default class Layout extends React.Component{
 		this.state = {name: 'Stephen', title: 'Welcome'};
 
 		// Props are injected into other components
+	}
+
+	navigate(){
+		// console.log(this.props);
+		this.props.history.pushState(null, "/");
 	}
 
 	changeTitle(val){
@@ -34,10 +39,11 @@ export default class Layout extends React.Component{
 			{/*<Header title={title} />*/}
 			<Header changeTitle={this.changeTitle.bind(this)} title={this.state.title} />
 			{this.props.children}
-			<Link to='archives'>Archives</Link>
-			<Link to='settings'>settings</Link>
+			<Link to='archives' activeClassName="active">Archives</Link>
+			<Link to='settings'>Settings</Link>
+			<button onClick={this.navigate.bind(this)}>featured</button>
 
-			<p>It's working</p>
+
 			<Footer/>
 			</div>
 		);

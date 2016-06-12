@@ -1,7 +1,4 @@
-import React from 'react';
-
-import Header from '../header/Header';
-import Footer from '../Footer';
+import React from "react";
 
 export default class Settings extends React.Component{
 	constructor(){
@@ -16,8 +13,7 @@ export default class Settings extends React.Component{
 
 		return(
 			<div>
-			<p>Settings</p>
-			<Footer/>
+				<h1>Settings</h1>
 			</div>
 		);
 	}
